@@ -1,0 +1,16 @@
+.header-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: bold;
+}
+
+.actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}

@@ -1,0 +1,29 @@
+<div class="login-container flex flex-col items-center justify-between min-h-screen bg-gradient-to-r from-blue-500 to-purple-600">
+  <!-- Login Card -->
+  <mat-card class="login-card p-8 bg-white shadow-lg rounded-lg max-w-md w-full">
+    <h2 class="text-3xl font-bold text-center mb-6 text-gray-700">{{ 'LOGIN.TITLE' | translate }}</h2>
+    <form class="flex flex-col gap-4">
+      <mat-form-field appearance="fill" class="w-full">
+        <mat-label>{{ 'LOGIN.USERNAME_LABEL' | translate }}</mat-label>
+        <input matInput placeholder="{{ 'LOGIN.USERNAME_PLACEHOLDER' | translate }}" [(ngModel)]="username" name="username" class="rounded-md" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="w-full">
+        <mat-label>{{ 'LOGIN.PASSWORD_LABEL' | translate }}</mat-label>
+        <input matInput placeholder="{{ 'LOGIN.PASSWORD_PLACEHOLDER' | translate }}" [(ngModel)]="password" name="password" type="password" class="rounded-md" />
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" class="w-full h-12 text-lg font-semibold mt-4" (click)="login()">{{ 'LOGIN.BUTTON' | translate }}</button>
+    </form>
+  </mat-card>
+
+  <!-- Language Buttons -->
+  <div class="language-buttons">
+    @if (selectedLanguage() ==='ar') {
+      <button mat-raised-button color="primary" class="h-12 text-lg font-semibold" (click)="changeLanguage('en')">{{ 'EN' | translate }}</button>
+
+    }@else { 
+      <button mat-raised-button color="primary" class="h-12 text-lg font-semibold" (click)="changeLanguage('ar')">{{ 'AR' | translate }}</button>
+    }
+  </div>
+</div>

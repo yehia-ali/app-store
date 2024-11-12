@@ -1,0 +1,15 @@
+{
+    "COMMON": {
+        "APP_NAME":"My Store",
+        "LOGOUT":"Logout"
+      },
+    "LOGIN": {
+      "TITLE": "Login",
+      "USERNAME_LABEL": "Username",
+      "USERNAME_PLACEHOLDER": "Enter your username",
+      "PASSWORD_LABEL": "Password",
+      "PASSWORD_PLACEHOLDER": "Enter your password",
+      "BUTTON": "Login"
+    }
+  }
+  

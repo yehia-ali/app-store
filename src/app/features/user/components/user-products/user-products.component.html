@@ -1,0 +1,61 @@
+<div
+  class="category-list flex flex-wrap justify-center gap-6 p-6 bg-gradient-to-r from-indigo-600 via-purple-500 to-pink-500 shadow-xl rounded-3xl"
+>
+<div *ngFor="let category of categories(); let i = index">
+  <button
+    mat-flat-button
+    *ngIf="selectedCategory() === category; else raisedButton"
+    (click)="selectCategory(category)"
+  >
+    {{ category }}
+  </button>
+
+  <ng-template #raisedButton>
+    <button
+      mat-raised-button
+      (click)="selectCategory(category)"
+    >
+      {{ category }}
+    </button>
+  </ng-template>
+</div>
+
+
+<div
+  *ngIf="loading()"
+  class="loading-spinner flex justify-center items-center h-32"
+>
+  <mat-spinner diameter="50"></mat-spinner>
+</div>
+
+<div
+  *ngIf="!loading() && products().length"
+  class="product-list grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6"
+>
+  <mat-card
+    *ngFor="let product of products()"
+    class="product-card bg-white shadow-xl rounded-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl flex flex-col"
+  >
+    <img
+      mat-card-image
+      [src]="product.image"
+      [alt]="product.title"
+      class="product-image"
+    />
+    <mat-card-content class="p-6 flex-grow">
+      <h2 class="text-xl font-semibold text-gray-800 mb-2">
+        {{ product.title }}
+      </h2>
+      <!-- | slice:0:80 -->
+      <p class="text-gray-600 text-sm mb-4">{{ product.description }}</p>
+      <h3 class="text-lg font-bold text-blue-600">
+        {{ product.price | currency : "USD" }}
+      </h3>
+    </mat-card-content>
+    <mat-card-actions class="p-4">
+      <button mat-raised-button color="primary" class="w-full py-2 font-medium">
+        Add to Cart
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

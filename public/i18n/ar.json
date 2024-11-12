@@ -1,0 +1,14 @@
+{
+  "COMMON": {
+    "APP_NAME": "متجرنا",
+    "LOGOUT": "تسجيل الخروج"
+  },
+  "LOGIN": {
+    "TITLE": "تسجيل الدخول",
+    "USERNAME_LABEL": "اسم المستخدم",
+    "USERNAME_PLACEHOLDER": "أدخل اسم المستخدم",
+    "PASSWORD_LABEL": "كلمة المرور",
+    "PASSWORD_PLACEHOLDER": "أدخل كلمة المرور",
+    "BUTTON": "تسجيل الدخول"
+  }
+}
